@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>stayrunning</title>
+<title>标签: 实习 - stayrunning</title>
 
 
     <meta name="description" content="我的学习记录...">
 <meta name="keywords" content="编程 学习 记录 分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="stayrunning">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/实习/index.html">
 <meta property="og:site_name" content="stayrunning">
 <meta property="og:description" content="我的学习记录...">
 <meta property="og:locale" content="zh-CN">
@@ -88,7 +88,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/">Home</a>
                 
                 <a class="navbar-item"
@@ -129,60 +129,16 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-28T03:38:49.742Z">2020-02-28</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 分钟 读完 (大约 892 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/28/多线程自我总结/">2019-8-14多线程学习</a>
-            
-        </h1>
-        <div class="content">
-            <h5 id="1-为什么会出现锁机制？"><a href="#1-为什么会出现锁机制？" class="headerlink" title="1.为什么会出现锁机制？"></a>1.为什么会出现锁机制？</h5><blockquote>
-<p>Java是允许多线程并发控制的，一般在系统中，如果多个线程在操作某一共享资源变量，比如说在进行数据库的操作时，那么就有可能会引起数据脏读。那么加入锁机制就可以保证某一线程在操作时不会发生冲突，确保了数据的一致性和准确性。</p>
-</blockquote>
-<h5 id="2-Java线程同步的方式有哪些？"><a href="#2-Java线程同步的方式有哪些？" class="headerlink" title="2.Java线程同步的方式有哪些？"></a>2.Java线程同步的方式有哪些？</h5><blockquote>
-<p>同步的方式有同步方法，用synchronized关键字修饰的方法。<br>同步代码块，用synchronized关键字修饰的代码块。<br>使用特殊性变量（volatile）实现线程同步。<br>使用Lock（一般指reentranLock）实现线程同步。<br>提供线程内的局部变量实现线程同步，也就是用ThreadLoacl管理变量，ThreadLocal是通过为每个线程使用的该变量提供一个变量副本，副本之间是相互独立的，所以这样每个线程就可以通过操作自己的副本变量而不会影响到其他线程。<br>==这里可以小小的总结一下，就是以上synchronized和reentranLock是通过时间换空间的方法来实现同步的，而ThreadLocal则是通过空间换时间的方式来进行同步的。 #F44336==</p>
-</blockquote>
-<h5 id="3-synchronized和volatile的区别。"><a href="#3-synchronized和volatile的区别。" class="headerlink" title="3.synchronized和volatile的区别。"></a>3.synchronized和volatile的区别。</h5><p>（1）volatile是线程同步的轻量级实现，性能比synchronized好。</p>
-<p>（2）volatile只能修饰变量，而synchronized可以修饰方法或者代码块。</p>
-<p>（3）volatile可以保证数据的可见性，但是不能保证原子性，而synchronized可以保证原子性，也可以间接保证可见性，因为它会将私有内存与公共内存中的数据做同步。</p>
-<h5 id="4-ThreadLocal实现原理"><a href="#4-ThreadLocal实现原理" class="headerlink" title="4.ThreadLocal实现原理"></a>4.ThreadLocal实现原理</h5><p>每个线程Thread内部有一个ThreadLocal.ThreadLocalMap类型的成员变量threadLocals，ThreadLocalMap是属于Thread的内部类，用来存放一对对的entry键值对。怎么存放，就是以当前ThreadLocal变量为键值，要保存的副本变量为vaule为一对键值对，存放到threadlocals中去。要使用时就通过get方法进行取值。<br>应用：数据库连接。</p>
-<h5 id="5-java中如何创建线程？"><a href="#5-java中如何创建线程？" class="headerlink" title="5.java中如何创建线程？"></a>5.java中如何创建线程？</h5><p>大体有4种方法。继承Thread父类，实现runnable接口，实现callable接口，线程池创建。</p>
-<h5 id="6-Java线程池使用有界队列实现时的饱和策略有哪些？"><a href="#6-Java线程池使用有界队列实现时的饱和策略有哪些？" class="headerlink" title="6.Java线程池使用有界队列实现时的饱和策略有哪些？"></a>6.Java线程池使用有界队列实现时的饱和策略有哪些？</h5><h5 id="7-启动线程时，start与run的区别是什么？"><a href="#7-启动线程时，start与run的区别是什么？" class="headerlink" title="7.启动线程时，start与run的区别是什么？"></a>7.启动线程时，start与run的区别是什么？</h5><p>start才是调用线程，直接run知识调用其中的方法。</p>
-<h5 id="8-介绍一下AbstaractQueuedSynchronizer？"><a href="#8-介绍一下AbstaractQueuedSynchronizer？" class="headerlink" title="8.介绍一下AbstaractQueuedSynchronizer？"></a>8.介绍一下AbstaractQueuedSynchronizer？</h5><h5 id="9-介绍一下Condition"><a href="#9-介绍一下Condition" class="headerlink" title="9.介绍一下Condition"></a>9.介绍一下Condition</h5><h5 id="10-介绍一下Reentrantlock"><a href="#10-介绍一下Reentrantlock" class="headerlink" title="10.介绍一下Reentrantlock"></a>10.介绍一下Reentrantlock</h5><p>可重入锁，</p>
-<h5 id="11-Java中Reentrantlock的使用场景"><a href="#11-Java中Reentrantlock的使用场景" class="headerlink" title="11.Java中Reentrantlock的使用场景"></a>11.Java中Reentrantlock的使用场景</h5><h5 id="12-Java中synchronize-与-Lock的区别和使用场景"><a href="#12-Java中synchronize-与-Lock的区别和使用场景" class="headerlink" title="12.Java中synchronize 与 Lock的区别和使用场景"></a>12.Java中synchronize 与 Lock的区别和使用场景</h5><h5 id="13-java中synchronized代码块的实现，以及jdk1-6对锁的优化"><a href="#13-java中synchronized代码块的实现，以及jdk1-6对锁的优化" class="headerlink" title="13.java中synchronized代码块的实现，以及jdk1.6对锁的优化"></a>13.java中synchronized代码块的实现，以及jdk1.6对锁的优化</h5><h5 id="14-java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？"><a href="#14-java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？" class="headerlink" title="14.java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？"></a>14.java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？</h5><h5 id="15-java中的线程有几种状态？什么状态是阻塞状态？"><a href="#15-java中的线程有几种状态？什么状态是阻塞状态？" class="headerlink" title="15.java中的线程有几种状态？什么状态是阻塞状态？"></a>15.java中的线程有几种状态？什么状态是阻塞状态？</h5><h5 id="16-怎么去看一个java进程中有哪些线程处于阻塞状态的？"><a href="#16-怎么去看一个java进程中有哪些线程处于阻塞状态的？" class="headerlink" title="16.怎么去看一个java进程中有哪些线程处于阻塞状态的？"></a>16.怎么去看一个java进程中有哪些线程处于阻塞状态的？</h5><h5 id="17-读写锁"><a href="#17-读写锁" class="headerlink" title="17.读写锁"></a>17.读写锁</h5><h5 id="18-CAS底层实现原理"><a href="#18-CAS底层实现原理" class="headerlink" title="18.CAS底层实现原理"></a>18.CAS底层实现原理</h5><h5 id="19-Java中锁的优化"><a href="#19-Java中锁的优化" class="headerlink" title="19.Java中锁的优化"></a>19.Java中锁的优化</h5><h5 id="20-java中thread与Runnable的区别？"><a href="#20-java中thread与Runnable的区别？" class="headerlink" title="20.java中thread与Runnable的区别？"></a>20.java中thread与Runnable的区别？</h5><h5 id="21-java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？"><a href="#21-java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？" class="headerlink" title="21.java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？"></a>21.java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？</h5><h5 id="22-介绍下乐观锁和悲观锁。"><a href="#22-介绍下乐观锁和悲观锁。" class="headerlink" title="22.介绍下乐观锁和悲观锁。"></a>22.介绍下乐观锁和悲观锁。</h5><h5 id="23-叙述下java中wait与sleep的区别以及notify与yied？"><a href="#23-叙述下java中wait与sleep的区别以及notify与yied？" class="headerlink" title="23.叙述下java中wait与sleep的区别以及notify与yied？"></a>23.叙述下java中wait与sleep的区别以及notify与yied？</h5><h5 id="24-介绍下java中CAS原理"><a href="#24-介绍下java中CAS原理" class="headerlink" title="24.介绍下java中CAS原理"></a>24.介绍下java中CAS原理</h5>
-        </div>
-        
-        
-        
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">实习</a></li>
+        </ul>
+        </nav>
     </div>
 </div>
-
-
-
-
-
-
-
 
     
 <div class="card">
@@ -222,50 +178,6 @@
 <h5 id="关于异常处理以及权限拦截"><a href="#关于异常处理以及权限拦截" class="headerlink" title="关于异常处理以及权限拦截"></a>关于异常处理以及权限拦截</h5><p>前后端在交互时一般都会进行一个身份认证，以及权限拦截，包括异常处理等等。这些一般都会抽象出一个框架出来。这里想说一下，权限的控制一定是要交给后端来控制的，确保接口和数据的安全性。</p>
 <h5 id="关于七牛云以及阿里云图片存储的使用"><a href="#关于七牛云以及阿里云图片存储的使用" class="headerlink" title="关于七牛云以及阿里云图片存储的使用"></a>关于七牛云以及阿里云图片存储的使用</h5><p>开发调试过程中要用到内网穿透。</p>
 <p>（后续补充吧，先这样~睡觉）</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-31T13:32:10.000Z">2019-08-31</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 178 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/31/hey,csy/">love and company</a>
-            
-        </h1>
-        <div class="content">
-            <h5 id="《我曾七次鄙视我的灵魂》-——纪伯伦"><a href="#《我曾七次鄙视我的灵魂》-——纪伯伦" class="headerlink" title="《我曾七次鄙视我的灵魂》 ——纪伯伦"></a>《我曾七次鄙视我的灵魂》 ——纪伯伦</h5><blockquote>
-<p>第一次，当它本可进取时，却故作谦卑；<br>第二次，当它在空虚时，用爱欲来填充；<br>第三次，在困难和容易之间，它选择了容易；<br>第四次，它犯了错，却借由别人也会犯错来宽慰自己；<br>第五次，它自由软弱，却把它认为是生命的坚韧；<br>第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；<br>第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。</p>
-</blockquote>
 
         </div>
         

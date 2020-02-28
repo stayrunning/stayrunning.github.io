@@ -7,21 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>stayrunning</title>
+<title>2019-8-14多线程学习 - stayrunning</title>
 
 
-    <meta name="description" content="我的学习记录...">
-<meta name="keywords" content="编程 学习 记录 分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="stayrunning">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="1.为什么会出现锁机制？ Java是允许多线程并发控制的，一般在系统中，如果多个线程在操作某一共享资源变量，比如说在进行数据库的操作时，那么就有可能会引起数据脏读。那么加入锁机制就可以保证某一线程在操作时不会发生冲突，确保了数据的一致性和准确性。  2.Java线程同步的方式有哪些？ 同步的方式有同步方法，用synchronized关键字修饰的方法。同步代码块，用synchronized关键字修饰">
+<meta name="keywords" content="多线程,面经,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019-8-14多线程学习">
+<meta property="og:url" content="http://yoursite.com/2020/02/28/多线程自我总结/index.html">
 <meta property="og:site_name" content="stayrunning">
-<meta property="og:description" content="我的学习记录...">
+<meta property="og:description" content="1.为什么会出现锁机制？ Java是允许多线程并发控制的，一般在系统中，如果多个线程在操作某一共享资源变量，比如说在进行数据库的操作时，那么就有可能会引起数据脏读。那么加入锁机制就可以保证某一线程在操作时不会发生冲突，确保了数据的一致性和准确性。  2.Java线程同步的方式有哪些？ 同步的方式有同步方法，用synchronized关键字修饰的方法。同步代码块，用synchronized关键字修饰">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-02-28T07:22:11.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="stayrunning">
-<meta name="twitter:description" content="我的学习记录...">
+<meta name="twitter:title" content="2019-8-14多线程学习">
+<meta name="twitter:description" content="1.为什么会出现锁机制？ Java是允许多线程并发控制的，一般在系统中，如果多个线程在操作某一共享资源变量，比如说在进行数据库的操作时，那么就有可能会引起数据脏读。那么加入锁机制就可以保证某一线程在操作时不会发生冲突，确保了数据的一致性和准确性。  2.Java线程同步的方式有哪些？ 同步的方式有同步方法，用synchronized关键字修饰的方法。同步代码块，用synchronized关键字修饰">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -80,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="stayrunning" height="28">
+                <img src="/images/logo.svg" alt="2019-8-14多线程学习" height="28">
             
             </a>
         </div>
@@ -88,7 +89,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/">Home</a>
                 
                 <a class="navbar-item"
@@ -130,7 +131,6 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-    
 <div class="card">
     
     <div class="card-content article ">
@@ -152,7 +152,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/02/28/多线程自我总结/">2019-8-14多线程学习</a>
+                2019-8-14多线程学习
             
         </h1>
         <div class="content">
@@ -172,59 +172,15 @@
 <h5 id="11-Java中Reentrantlock的使用场景"><a href="#11-Java中Reentrantlock的使用场景" class="headerlink" title="11.Java中Reentrantlock的使用场景"></a>11.Java中Reentrantlock的使用场景</h5><h5 id="12-Java中synchronize-与-Lock的区别和使用场景"><a href="#12-Java中synchronize-与-Lock的区别和使用场景" class="headerlink" title="12.Java中synchronize 与 Lock的区别和使用场景"></a>12.Java中synchronize 与 Lock的区别和使用场景</h5><h5 id="13-java中synchronized代码块的实现，以及jdk1-6对锁的优化"><a href="#13-java中synchronized代码块的实现，以及jdk1-6对锁的优化" class="headerlink" title="13.java中synchronized代码块的实现，以及jdk1.6对锁的优化"></a>13.java中synchronized代码块的实现，以及jdk1.6对锁的优化</h5><h5 id="14-java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？"><a href="#14-java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？" class="headerlink" title="14.java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？"></a>14.java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？</h5><h5 id="15-java中的线程有几种状态？什么状态是阻塞状态？"><a href="#15-java中的线程有几种状态？什么状态是阻塞状态？" class="headerlink" title="15.java中的线程有几种状态？什么状态是阻塞状态？"></a>15.java中的线程有几种状态？什么状态是阻塞状态？</h5><h5 id="16-怎么去看一个java进程中有哪些线程处于阻塞状态的？"><a href="#16-怎么去看一个java进程中有哪些线程处于阻塞状态的？" class="headerlink" title="16.怎么去看一个java进程中有哪些线程处于阻塞状态的？"></a>16.怎么去看一个java进程中有哪些线程处于阻塞状态的？</h5><h5 id="17-读写锁"><a href="#17-读写锁" class="headerlink" title="17.读写锁"></a>17.读写锁</h5><h5 id="18-CAS底层实现原理"><a href="#18-CAS底层实现原理" class="headerlink" title="18.CAS底层实现原理"></a>18.CAS底层实现原理</h5><h5 id="19-Java中锁的优化"><a href="#19-Java中锁的优化" class="headerlink" title="19.Java中锁的优化"></a>19.Java中锁的优化</h5><h5 id="20-java中thread与Runnable的区别？"><a href="#20-java中thread与Runnable的区别？" class="headerlink" title="20.java中thread与Runnable的区别？"></a>20.java中thread与Runnable的区别？</h5><h5 id="21-java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？"><a href="#21-java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？" class="headerlink" title="21.java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？"></a>21.java中闭锁CountDownLatch与栅栏CyclicBarrier的区别？</h5><h5 id="22-介绍下乐观锁和悲观锁。"><a href="#22-介绍下乐观锁和悲观锁。" class="headerlink" title="22.介绍下乐观锁和悲观锁。"></a>22.介绍下乐观锁和悲观锁。</h5><h5 id="23-叙述下java中wait与sleep的区别以及notify与yied？"><a href="#23-叙述下java中wait与sleep的区别以及notify与yied？" class="headerlink" title="23.叙述下java中wait与sleep的区别以及notify与yied？"></a>23.叙述下java中wait与sleep的区别以及notify与yied？</h5><h5 id="24-介绍下java中CAS原理"><a href="#24-介绍下java中CAS原理" class="headerlink" title="24.介绍下java中CAS原理"></a>24.介绍下java中CAS原理</h5>
         </div>
         
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-15T14:41:10.000Z">2019-09-15</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1313 个字)
-                </span>
-                
-                
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/多线程-面经-总结/">多线程,面经,总结</a>
+                </div>
             </div>
         </div>
         
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/09/15/实习阶段总结/">实习阶段总结</a>
-            
-        </h1>
-        <div class="content">
-            <p>现在来整理一下一般在项目开发中给的流程以及用到的工具。因为有点杂，就想到啥就写点啥吧。<br>以下是我在实习期间的一点小心得。</p>
-<h5 id="项目原型讨论"><a href="#项目原型讨论" class="headerlink" title="项目原型讨论"></a>项目原型讨论</h5><p>一般会有UI出稿，然后大家一起开会讨论，来说一下具体的需求。接着就是任务分配，具体分配有哪些人来完成数据库设计，前端， 后端数据接口。</p>
-<h5 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h5><p>首先是数据库的设计，一般来说，数据库的设计最好由熟悉业务的人来设计比较好，在实际工作中，我就发现，每个人对于需求的理解都是不一样的，就比如说，我们在进行“合拍”小程序开发的时候，一开始数据库是几个人一起讨论设计的，但是发现每个人在具体的数据存储方式上就有可能不同了。当然这就是一个团队沟通的具体表现了，一定要学会和你的team进行有效正确的沟通，避免出现歧义和误会。其实数据库的设计是很重要的，因为这会涉及到你后续的开发是否顺畅。比如我们一开始在进行数据库的设计的时候，就是没有考虑周全，然后被总监怼了一发，就是没有考虑扩展性，这样一来以后要是有什么新功能增加或者其他需求就不太好做操作了。所以在进行数据库的设计时一定要考虑周全。那么这个又要涉及到对业务的理解了，这就是我为什么说最好交给对业务熟悉的人来设计。</p>
-<h5 id="构建E-R图"><a href="#构建E-R图" class="headerlink" title="构建E-R图"></a>构建E-R图</h5><p>数据库在设计的过程中，一定要把E-R图给画清楚，表与表之间的关系，逻辑，一定要理清，这样后续在开发中才不会有很多坑。现在有很多画图软件，但是我就习惯直接在纸上用笔进行草稿，因为其实只有你自己厘清了才是最有用的…其实我觉得用笔画是最高效的。</p>
-<h5 id="讨论数据库设计的可行性"><a href="#讨论数据库设计的可行性" class="headerlink" title="讨论数据库设计的可行性"></a>讨论数据库设计的可行性</h5><p>一般设计完就会和你的team一起讨论一下咯，看看这样的设计方案是否可行，是否还有什么漏洞，还有什么需要补充的。查询性能怎么样等等。</p>
-<h5 id="前端开发"><a href="#前端开发" class="headerlink" title="前端开发"></a>前端开发</h5><p>因为在这前后端是没有具体分开做的，这就意味着还得会前端。但是我个人的话，就是停留在会用而已…（会点前端还是很重要的鸭）对于一些具体的没有太深入理解。前端是采用vue+elementUI来进行开发的。也是用vue的脚手架，elementUI用起来确实很爽，省了很多事。vue的话没有深入学习过js的话确实不太好理解。里面文件具体分工明确。关于怎么使用，后续再说。</p>
-<h5 id="后端开发"><a href="#后端开发" class="headerlink" title="后端开发"></a>后端开发</h5><p>后端的话可以springboot，很多配置文件已经帮你配好了，所以也就没有那么麻烦。数据的持久化用的的mybatis框架。<br>关于后端，比较想总结多一点。</p>
-<h5 id="前后端的配合"><a href="#前后端的配合" class="headerlink" title="前后端的配合"></a>前后端的配合</h5><p>一般前后端的交互都是通过前端请求后端。所以双方的数据报文的命名一定要统一好。一般前端会通过POST，GET这两种请求方式。后端的话在接收到数据后，要进行一个数据解析，这时一般后端会设计一个DTO，也就是前端请求接口的查询条件model，然后利用@requestbody进行映射。再利用阿里的fastJSON进行处理。接着就转到业务层。业务层处理完后如果有需要进行到数据的持久化操作的话就再转到DAO层，用的是mybatis-plus。在这里的话主要就是写sql了。慢慢写才会对sql慢慢熟练。</p>
-<h5 id="关于model的生成"><a href="#关于model的生成" class="headerlink" title="关于model的生成"></a>关于model的生成</h5><p>一般可以利用工具进行数据库model的映射。现在这种脚本很多，也可以自己写一个。可以大大地节省你的时间。</p>
-<h5 id="关于异常处理以及权限拦截"><a href="#关于异常处理以及权限拦截" class="headerlink" title="关于异常处理以及权限拦截"></a>关于异常处理以及权限拦截</h5><p>前后端在交互时一般都会进行一个身份认证，以及权限拦截，包括异常处理等等。这些一般都会抽象出一个框架出来。这里想说一下，权限的控制一定是要交给后端来控制的，确保接口和数据的安全性。</p>
-<h5 id="关于七牛云以及阿里云图片存储的使用"><a href="#关于七牛云以及阿里云图片存储的使用" class="headerlink" title="关于七牛云以及阿里云图片存储的使用"></a>关于七牛云以及阿里云图片存储的使用</h5><p>开发调试过程中要用到内网穿透。</p>
-<p>（后续补充吧，先这样~睡觉）</p>
-
-        </div>
-        
         
         
     </div>
@@ -232,53 +188,55 @@
 
 
 
-
-
-
-
-
-    
 <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-31T13:32:10.000Z">2019-08-31</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1 分钟 读完 (大约 178 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
             
-                <a class="has-link-black-ter" href="/2019/08/31/hey,csy/">love and company</a>
-            
-        </h1>
-        <div class="content">
-            <h5 id="《我曾七次鄙视我的灵魂》-——纪伯伦"><a href="#《我曾七次鄙视我的灵魂》-——纪伯伦" class="headerlink" title="《我曾七次鄙视我的灵魂》 ——纪伯伦"></a>《我曾七次鄙视我的灵魂》 ——纪伯伦</h5><blockquote>
-<p>第一次，当它本可进取时，却故作谦卑；<br>第二次，当它在空虚时，用爱欲来填充；<br>第三次，在困难和容易之间，它选择了容易；<br>第四次，它犯了错，却借由别人也会犯错来宽慰自己；<br>第五次，它自由软弱，却把它认为是生命的坚韧；<br>第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；<br>第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。</p>
-</blockquote>
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
 
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
         </div>
-        
-        
-        
     </div>
 </div>
 
 
 
-
-
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/15/实习阶段总结/">
+                <span class="level-item">实习阶段总结</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -779,7 +737,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="stayrunning" height="28">
+                    <img src="/images/logo.svg" alt="2019-8-14多线程学习" height="28">
                 
                 </a>
                 <p class="is-size-7">
