@@ -108,7 +108,7 @@
             <div class="navbar-end">
                 
                     
-                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://stayrunning.github.io/">
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="/">
                         
                         <i class="fab fa-github"></i>
                         
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 分钟 读完 (大约 1530 个字)
+                    10 分钟 读完 (大约 1531 个字)
                 </span>
                 
                 
@@ -173,43 +173,16 @@
 <h5 id="2-Java线程同步的方式有哪些？"><a href="#2-Java线程同步的方式有哪些？" class="headerlink" title="2.Java线程同步的方式有哪些？"></a>2.Java线程同步的方式有哪些？</h5><blockquote>
 <p>同步的方式有同步方法，用synchronized关键字修饰的方法。<br>同步代码块，用synchronized关键字修饰的代码块。<br>使用特殊性变量（volatile）实现线程同步。<br>使用Lock（一般指reentranLock）实现线程同步。<br>提供线程内的局部变量实现线程同步，也就是用ThreadLoacl管理变量，ThreadLocal是通过为每个线程使用的该变量提供一个变量副本，副本之间是相互独立的，所以这样每个线程就可以通过操作自己的副本变量而不会影响到其他线程。<br>==这里可以小小的总结一下，就是以上synchronized和reentranLock是通过时间换空间的方法来实现同步的，而ThreadLocal则是通过空间换时间的方式来进行同步的。 #F44336==</p>
 </blockquote>
-<h5 id="3-synchronized和volatile的区别。"><a href="#3-synchronized和volatile的区别。" class="headerlink" title="3.synchronized和volatile的区别。"></a>3.synchronized和volatile的区别。</h5><p>（1）volatile是线程同步的轻量级实现，性能比synchronized好。</p>
-<p>（2）volatile只能修饰变量，而synchronized可以修饰方法或者代码块。</p>
-<p>（3）volatile可以保证数据的可见性，但是不能保证原子性，而synchronized可以保证原子性，也可以间接保证可见性，因为它会将私有内存与公共内存中的数据做同步。</p>
-<h5 id="4-ThreadLocal实现原理"><a href="#4-ThreadLocal实现原理" class="headerlink" title="4.ThreadLocal实现原理"></a>4.ThreadLocal实现原理</h5><p>每个线程Thread内部有一个ThreadLocal.ThreadLocalMap类型的成员变量threadLocals，ThreadLocalMap是属于Thread的内部类，用来存放一对对的entry键值对。怎么存放，就是以当前ThreadLocal变量为键值，要保存的副本变量为vaule为一对键值对，存放到threadlocals中去。要使用时就通过get方法进行取值。<br>应用：数据库连接。</p>
-<h5 id="5-java中如何创建线程？"><a href="#5-java中如何创建线程？" class="headerlink" title="5.java中如何创建线程？"></a>5.java中如何创建线程？</h5><p>大体有4种方法。继承Thread父类，实现runnable接口，实现callable接口，线程池创建。</p>
-<h5 id="6-Java线程池使用有界队列实现时的饱和策略有哪些？"><a href="#6-Java线程池使用有界队列实现时的饱和策略有哪些？" class="headerlink" title="6.Java线程池使用有界队列实现时的饱和策略有哪些？"></a>6.Java线程池使用有界队列实现时的饱和策略有哪些？</h5><h5 id="7-启动线程时，start与run的区别是什么？"><a href="#7-启动线程时，start与run的区别是什么？" class="headerlink" title="7.启动线程时，start与run的区别是什么？"></a>7.启动线程时，start与run的区别是什么？</h5><p>start才是调用线程，直接run知识调用其中的方法。</p>
-<h5 id="8-介绍一下AbstaractQueuedSynchronizer？"><a href="#8-介绍一下AbstaractQueuedSynchronizer？" class="headerlink" title="8.介绍一下AbstaractQueuedSynchronizer？"></a>8.介绍一下AbstaractQueuedSynchronizer？</h5><p>消息同步队列，可以用于构建阻塞锁或者同步容器的基础框架。</p>
-<h5 id="9-介绍一下Condition"><a href="#9-介绍一下Condition" class="headerlink" title="9.介绍一下Condition"></a>9.介绍一下Condition</h5><p>Condition将Object监视器方法（wait、notify和notify）分解为截然不同的对象。变成对象后，就可以和Lock实现组合使用。Lock就代替了Synchronized方法和语句的使用，Condition就代替了Object监视方法的使用。Condition对象的实例实际上就是绑定在一个Lock锁上。</p>
-<h5 id="10-介绍一下Reentrantlock"><a href="#10-介绍一下Reentrantlock" class="headerlink" title="10.介绍一下Reentrantlock"></a>10.介绍一下Reentrantlock</h5><p>是一个可重入锁类。在高竞争条件下有更好的性能，且可以中断。是基于AQS实现的。</p>
-<h5 id="11-Java中Reentrantlock的使用场景"><a href="#11-Java中Reentrantlock的使用场景" class="headerlink" title="11.Java中Reentrantlock的使用场景"></a>11.Java中Reentrantlock的使用场景</h5><p>（1）需要使用可重入锁时。</p>
-<p>（2）并发竞争很高的情况下</p>
-<p>（3）需要使用中可中断锁</p>
-<p>（4）尝试等待执行。</p>
-<h5 id="12-Java中synchronize-与-Lock的区别"><a href="#12-Java中synchronize-与-Lock的区别" class="headerlink" title="12.Java中synchronize 与 Lock的区别"></a>12.Java中synchronize 与 Lock的区别</h5><p>（1）synchronized是使用Object本身的notify,wait,notifyAll调度机制，Lock可以使用Condition进行线程间调度。</p>
-<p>（2）在一个对象里面可以有多个Condition,相对灵活。</p>
-<p>（3）Lcok的上锁是通过代码实现的，而synchroniezd是通过JVM层面实现的。</p>
-<h5 id="13-java中synchronized代码块的实现，以及jdk1-6对锁的优化"><a href="#13-java中synchronized代码块的实现，以及jdk1-6对锁的优化" class="headerlink" title="13.java中synchronized代码块的实现，以及jdk1.6对锁的优化"></a>13.java中synchronized代码块的实现，以及jdk1.6对锁的优化</h5><h5 id="14-java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？"><a href="#14-java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？" class="headerlink" title="14.java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？"></a>14.java中的线程池实现有哪些？FixedThreadPool底层使用的是什么任务队列？</h5><p>emmm..</p>
-<h5 id="15-java中的线程有几种状态？什么状态是阻塞状态？"><a href="#15-java中的线程有几种状态？什么状态是阻塞状态？" class="headerlink" title="15.java中的线程有几种状态？什么状态是阻塞状态？"></a>15.java中的线程有几种状态？什么状态是阻塞状态？</h5><p>新建状态（new） 就绪状态（Runnable）    运行状态（Running）    阻塞状态（Blocked）    死亡状态（Dead）</p>
-<p>阻塞状态：等待阻塞    同步阻塞    其他阻塞</p>
-<h5 id="16-怎么去看一个java进程中有哪些线程处于阻塞状态的？"><a href="#16-怎么去看一个java进程中有哪些线程处于阻塞状态的？" class="headerlink" title="16.怎么去看一个java进程中有哪些线程处于阻塞状态的？"></a>16.怎么去看一个java进程中有哪些线程处于阻塞状态的？</h5><p>​        jstack</p>
-<h5 id="17-读写锁"><a href="#17-读写锁" class="headerlink" title="17.读写锁"></a>17.读写锁</h5><h5 id="18-CAS底层实现原理"><a href="#18-CAS底层实现原理" class="headerlink" title="18.CAS底层实现原理"></a>18.CAS底层实现原理</h5><h5 id="19-Java中锁的优化"><a href="#19-Java中锁的优化" class="headerlink" title="19.Java中锁的优化"></a>19.Java中锁的优化</h5><p>无锁——&gt;偏向锁——&gt;轻量级锁 ——&gt;重量级锁</p>
-<h5 id="20-java中thread与Runnable的区别？"><a href="#20-java中thread与Runnable的区别？" class="headerlink" title="20.java中thread与Runnable的区别？"></a>20.java中thread与Runnable的区别？</h5><p>（1）thread属于继承，但是java类中只能单继承，所以不太好。</p>
-<p>（2）Runnable是实现接口</p>
-<h5 id="21-java中闭锁CountDownLatch与栅栏CyclicBarrier的区别"><a href="#21-java中闭锁CountDownLatch与栅栏CyclicBarrier的区别" class="headerlink" title="21.java中闭锁CountDownLatch与栅栏CyclicBarrier的区别"></a>21.java中闭锁CountDownLatch与栅栏CyclicBarrier的区别</h5><p>​    断点</p>
-<h5 id="22-介绍下乐观锁和悲观锁。"><a href="#22-介绍下乐观锁和悲观锁。" class="headerlink" title="22.介绍下乐观锁和悲观锁。"></a>22.介绍下乐观锁和悲观锁。</h5><p>乐观锁：总是假设最好的情况，每次读取数据都认为别人不会读取。多读情况。</p>
-<p>悲观锁：总是假设最坏的情况，每次拿数据都认为别人会来修改，所以会先上把锁。多写情况。</p>
-<h5 id="23-叙述下java中wait与sleep的区别以及notify与yied？"><a href="#23-叙述下java中wait与sleep的区别以及notify与yied？" class="headerlink" title="23.叙述下java中wait与sleep的区别以及notify与yied？"></a>23.叙述下java中wait与sleep的区别以及notify与yied？</h5><h5 id="24-介绍下java中CAS原理"><a href="#24-介绍下java中CAS原理" class="headerlink" title="24.介绍下java中CAS原理"></a>24.介绍下java中CAS原理</h5><p>不使用锁的情况下实现多线程之间的变量同步。</p>
-<p>CAS算法涉及到三个操作数</p>
-<ul>
-<li>需要读写的内存值 V</li>
-<li>进行比较的值 A</li>
-<li>拟写入的新值 B</li>
-</ul>
-<p>当且仅当 V 的值等于 A时，CAS通过原子方式用新值B来更新V的值，否则不会执行任何操作（比较和替换是一个原子操作）。一般情况下是一个自旋操作，即不断的重试。</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/03/多线程自我总结/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -761,6 +734,34 @@
                 </p>
             </div>
             <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
             
             </div>
         </div>
