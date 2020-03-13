@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 分钟 读完 (大约 1531 个字)
+                    10 分钟 读完 (大约 1530 个字)
                 </span>
                 
                 
@@ -171,7 +171,7 @@
 <p>Java是允许多线程并发控制的，一般在系统中，如果多个线程在操作某一共享资源变量，比如说在进行数据库的操作时，那么就有可能会引起数据脏读。那么加入锁机制就可以保证某一线程在操作时不会发生冲突，确保了数据的一致性和准确性。</p>
 </blockquote>
 <h5 id="2-Java线程同步的方式有哪些？"><a href="#2-Java线程同步的方式有哪些？" class="headerlink" title="2.Java线程同步的方式有哪些？"></a>2.Java线程同步的方式有哪些？</h5><blockquote>
-<p>同步的方式有同步方法，用synchronized关键字修饰的方法。<br>同步代码块，用synchronized关键字修饰的代码块。<br>使用特殊性变量（volatile）实现线程同步。<br>使用Lock（一般指reentranLock）实现线程同步。<br>提供线程内的局部变量实现线程同步，也就是用ThreadLoacl管理变量，ThreadLocal是通过为每个线程使用的该变量提供一个变量副本，副本之间是相互独立的，所以这样每个线程就可以通过操作自己的副本变量而不会影响到其他线程。<br>==这里可以小小的总结一下，就是以上synchronized和reentranLock是通过时间换空间的方法来实现同步的，而ThreadLocal则是通过空间换时间的方式来进行同步的。 #F44336==</p>
+<p>同步的方式有同步方法，用synchronized关键字修饰的方法。<br>同步代码块，用synchronized关键字修饰的代码块。<br>使用特殊性变量（volatile）实现线程同步。<br>使用Lock（一般指reentranLock）实现线程同步。<br>提供线程内的局部变量实现线程同步，也就是用ThreadLoacl管理变量，ThreadLocal是通过为每个线程使用的该变量提供一个变量副本，副本之间是相互独立的，所以这样每个线程就可以通过操作自己的副本变量而不会影响到其他线程。<br>==这里可以小小的总结一下，就是以上synchronized和reentranLock是通过时间换空间的方法来实现同步的，而ThreadLocal则是通过空间换时间的方式来进行同步的。 </p>
 </blockquote>
         </div>
         

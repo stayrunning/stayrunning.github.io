@@ -19,7 +19,7 @@
 <meta property="og:description" content="1.创建节点12345678910//节点    static class Node&amp;#123;        public int var;        public Node left;        public Node right;        public Node(int var)&amp;#123;            this.var = var;        &amp;#125;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2020-03-08T03:17:12.479Z">
+<meta property="og:updated_time" content="2020-03-13T14:39:45.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树遍历">
 <meta name="twitter:description" content="1.创建节点12345678910//节点    static class Node&amp;#123;        public int var;        public Node left;        public Node right;        public Node(int var)&amp;#123;            this.var = var;        &amp;#125;">
@@ -143,7 +143,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 435 个字)
+                    3 分钟 读完 (大约 436 个字)
                 </span>
                 
                 
@@ -157,6 +157,8 @@
         </h1>
         <div class="content">
             <h6 id="1-创建节点"><a href="#1-创建节点" class="headerlink" title="1.创建节点"></a>1.创建节点</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//节点</span><br><span class="line">    static class Node&#123;</span><br><span class="line">        public int var;</span><br><span class="line">        public Node left;</span><br><span class="line">        public Node right;</span><br><span class="line"></span><br><span class="line">        public Node(int var)&#123;</span><br><span class="line">            this.var = var;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h6 id="2-创建树"><a href="#2-创建树" class="headerlink" title="2.创建树"></a>2.创建树</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//创建树</span><br><span class="line">    static Node createTree(int[] arr,int i)&#123;</span><br><span class="line">            if(i&gt;=arr.length || arr[i]==-1)&#123;</span><br><span class="line">                return null;</span><br><span class="line">            &#125;</span><br><span class="line">         Node root = new Node(arr[i]);</span><br><span class="line"></span><br><span class="line">            root.left = createTree(arr,2*i+1);</span><br><span class="line">            root.right = createTree(arr,2*i+2);</span><br><span class="line"></span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 

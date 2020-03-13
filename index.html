@@ -143,7 +143,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 分钟 读完 (大约 1313 个字)
+                    9 分钟 读完 (大约 1314 个字)
                 </span>
                 
                 
@@ -158,19 +158,16 @@
         <div class="content">
             <p>现在来整理一下一般在项目开发中给的流程以及用到的工具。因为有点杂，就想到啥就写点啥吧。<br>以下是我在实习期间的一点小心得。</p>
 <h5 id="项目原型讨论"><a href="#项目原型讨论" class="headerlink" title="项目原型讨论"></a>项目原型讨论</h5><p>一般会有UI出稿，然后大家一起开会讨论，来说一下具体的需求。接着就是任务分配，具体分配有哪些人来完成数据库设计，前端， 后端数据接口。</p>
-<h5 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h5><p>首先是数据库的设计，一般来说，数据库的设计最好由熟悉业务的人来设计比较好，在实际工作中，我就发现，每个人对于需求的理解都是不一样的，就比如说，我们在进行“合拍”小程序开发的时候，一开始数据库是几个人一起讨论设计的，但是发现每个人在具体的数据存储方式上就有可能不同了。当然这就是一个团队沟通的具体表现了，一定要学会和你的team进行有效正确的沟通，避免出现歧义和误会。其实数据库的设计是很重要的，因为这会涉及到你后续的开发是否顺畅。比如我们一开始在进行数据库的设计的时候，就是没有考虑周全，然后被总监怼了一发，就是没有考虑扩展性，这样一来以后要是有什么新功能增加或者其他需求就不太好做操作了。所以在进行数据库的设计时一定要考虑周全。那么这个又要涉及到对业务的理解了，这就是我为什么说最好交给对业务熟悉的人来设计。</p>
-<h5 id="构建E-R图"><a href="#构建E-R图" class="headerlink" title="构建E-R图"></a>构建E-R图</h5><p>数据库在设计的过程中，一定要把E-R图给画清楚，表与表之间的关系，逻辑，一定要理清，这样后续在开发中才不会有很多坑。现在有很多画图软件，但是我就习惯直接在纸上用笔进行草稿，因为其实只有你自己厘清了才是最有用的…其实我觉得用笔画是最高效的。</p>
-<h5 id="讨论数据库设计的可行性"><a href="#讨论数据库设计的可行性" class="headerlink" title="讨论数据库设计的可行性"></a>讨论数据库设计的可行性</h5><p>一般设计完就会和你的team一起讨论一下咯，看看这样的设计方案是否可行，是否还有什么漏洞，还有什么需要补充的。查询性能怎么样等等。</p>
-<h5 id="前端开发"><a href="#前端开发" class="headerlink" title="前端开发"></a>前端开发</h5><p>因为在这前后端是没有具体分开做的，这就意味着还得会前端。但是我个人的话，就是停留在会用而已…（会点前端还是很重要的鸭）对于一些具体的没有太深入理解。前端是采用vue+elementUI来进行开发的。也是用vue的脚手架，elementUI用起来确实很爽，省了很多事。vue的话没有深入学习过js的话确实不太好理解。里面文件具体分工明确。关于怎么使用，后续再说。</p>
-<h5 id="后端开发"><a href="#后端开发" class="headerlink" title="后端开发"></a>后端开发</h5><p>后端的话可以springboot，很多配置文件已经帮你配好了，所以也就没有那么麻烦。数据的持久化用的的mybatis框架。<br>关于后端，比较想总结多一点。</p>
-<h5 id="前后端的配合"><a href="#前后端的配合" class="headerlink" title="前后端的配合"></a>前后端的配合</h5><p>一般前后端的交互都是通过前端请求后端。所以双方的数据报文的命名一定要统一好。一般前端会通过POST，GET这两种请求方式。后端的话在接收到数据后，要进行一个数据解析，这时一般后端会设计一个DTO，也就是前端请求接口的查询条件model，然后利用@requestbody进行映射。再利用阿里的fastJSON进行处理。接着就转到业务层。业务层处理完后如果有需要进行到数据的持久化操作的话就再转到DAO层，用的是mybatis-plus。在这里的话主要就是写sql了。慢慢写才会对sql慢慢熟练。</p>
-<h5 id="关于model的生成"><a href="#关于model的生成" class="headerlink" title="关于model的生成"></a>关于model的生成</h5><p>一般可以利用工具进行数据库model的映射。现在这种脚本很多，也可以自己写一个。可以大大地节省你的时间。</p>
-<h5 id="关于异常处理以及权限拦截"><a href="#关于异常处理以及权限拦截" class="headerlink" title="关于异常处理以及权限拦截"></a>关于异常处理以及权限拦截</h5><p>前后端在交互时一般都会进行一个身份认证，以及权限拦截，包括异常处理等等。这些一般都会抽象出一个框架出来。这里想说一下，权限的控制一定是要交给后端来控制的，确保接口和数据的安全性。</p>
-<h5 id="关于七牛云以及阿里云图片存储的使用"><a href="#关于七牛云以及阿里云图片存储的使用" class="headerlink" title="关于七牛云以及阿里云图片存储的使用"></a>关于七牛云以及阿里云图片存储的使用</h5><p>开发调试过程中要用到内网穿透。</p>
-<p>（后续补充吧，先这样~睡觉）</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/09/15/实习阶段总结/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -240,7 +237,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 435 个字)
+                    3 分钟 读完 (大约 436 个字)
                 </span>
                 
                 
@@ -254,22 +251,16 @@
         </h1>
         <div class="content">
             <h6 id="1-创建节点"><a href="#1-创建节点" class="headerlink" title="1.创建节点"></a>1.创建节点</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//节点</span><br><span class="line">    static class Node&#123;</span><br><span class="line">        public int var;</span><br><span class="line">        public Node left;</span><br><span class="line">        public Node right;</span><br><span class="line"></span><br><span class="line">        public Node(int var)&#123;</span><br><span class="line">            this.var = var;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-创建树"><a href="#2-创建树" class="headerlink" title="2.创建树"></a>2.创建树</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//创建树</span><br><span class="line">    static Node createTree(int[] arr,int i)&#123;</span><br><span class="line">            if(i&gt;=arr.length || arr[i]==-1)&#123;</span><br><span class="line">                return null;</span><br><span class="line">            &#125;</span><br><span class="line">         Node root = new Node(arr[i]);</span><br><span class="line"></span><br><span class="line">            root.left = createTree(arr,2*i+1);</span><br><span class="line">            root.right = createTree(arr,2*i+2);</span><br><span class="line"></span><br><span class="line">        return root;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="3-前序遍历"><a href="#3-前序遍历" class="headerlink" title="3.前序遍历"></a>3.前序遍历</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//树的前序遍历</span><br><span class="line">    static void preOrder(Node T)&#123;</span><br><span class="line">        if (T == null)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.print(T.var+&quot; &quot;);</span><br><span class="line">        preOrder(T.left);</span><br><span class="line">        preOrder(T.right);</span><br><span class="line">    &#125;</span><br><span class="line">    //树的非递归前序遍历</span><br><span class="line">    static void iterativePre(Node root)&#123;</span><br><span class="line">        if (root == null)&#123;</span><br><span class="line">                return;</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;Node&gt; stack = new Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Node p = root;</span><br><span class="line"></span><br><span class="line">        while (!stack.empty() || p != null)&#123;</span><br><span class="line">            if (p != null)&#123;</span><br><span class="line">                stack.push(p);</span><br><span class="line">                System.out.print(p.var+&quot; &quot;);</span><br><span class="line">                p = p.left;</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                p = stack.pop();</span><br><span class="line">                p = p.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="4-中序遍历"><a href="#4-中序遍历" class="headerlink" title="4.中序遍历"></a>4.中序遍历</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//树的中序遍历</span><br><span class="line">    static void inOrder(Node T)&#123;</span><br><span class="line">        if (T == null)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        inOrder(T.left);</span><br><span class="line">        System.out.print(T.var+&quot; &quot;);</span><br><span class="line">        inOrder(T.right);</span><br><span class="line">    &#125;</span><br><span class="line">    //树的非递归中序遍历</span><br><span class="line">    static void iterativeIn(Node root)&#123;</span><br><span class="line">        if (root == null)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;Node&gt; stack = new Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        Node p = root;</span><br><span class="line"></span><br><span class="line">        while (!stack.empty() || p != null)&#123;</span><br><span class="line">            if (p != null)&#123;</span><br><span class="line">                stack.push(p);</span><br><span class="line">                p = p.left;</span><br><span class="line">            &#125;else &#123;</span><br><span class="line">                p = stack.pop();</span><br><span class="line">                System.out.print(p.var+&quot; &quot;);</span><br><span class="line">                p = p.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="5-后序遍历"><a href="#5-后序遍历" class="headerlink" title="5.后序遍历"></a>5.后序遍历</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//树的后序遍历</span><br><span class="line">static void afterOrder(Node T)&#123;</span><br><span class="line">    if (T == null)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    afterOrder(T.left);</span><br><span class="line">    afterOrder(T.right);</span><br><span class="line">    System.out.print(T.var+&quot; &quot;);</span><br><span class="line">&#125;</span><br><span class="line">//树的非递归后序遍历</span><br><span class="line">static void iterativeAfter(Node root)&#123;</span><br><span class="line">        if (root == null)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    Stack&lt;Node&gt; stack = new Stack&lt;&gt;();</span><br><span class="line">    Stack&lt;Node&gt; stack2 = new Stack&lt;&gt;();</span><br><span class="line">    Node p = root;</span><br><span class="line">    stack.push(p);</span><br><span class="line">        while (!stack.empty())&#123;</span><br><span class="line">            p = stack.pop();</span><br><span class="line">            stack2.push(p);</span><br><span class="line">            if (p.left != null) stack.push(p.left);</span><br><span class="line">            if (p.right != null) stack.push(p.right);</span><br><span class="line">        &#125;</span><br><span class="line">        while (!stack2.empty())&#123;</span><br><span class="line">            System.out.print(stack2.pop().var+&quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="6-层次遍历"><a href="#6-层次遍历" class="headerlink" title="6.层次遍历"></a>6.层次遍历</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h6 id="7-测试"><a href="#7-测试" class="headerlink" title="7.测试"></a>7.测试</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String args[])&#123;</span><br><span class="line">    int[] test = &#123;1,2,3,4,5,6,7,8,-1,9,-1,10,-1,11,-1&#125;;</span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;-----树的前序遍历&quot;);</span><br><span class="line">        preOrder(createTree(test,0));</span><br><span class="line">        System.out.println();</span><br><span class="line">    System.out.println(&quot;-----树的中序遍历&quot;);</span><br><span class="line">        inOrder(createTree(test,0));</span><br><span class="line">        System.out.println();</span><br><span class="line">    System.out.println(&quot;-----树的后序遍历&quot;);</span><br><span class="line">        afterOrder(createTree(test,0));</span><br><span class="line">        System.out.println();</span><br><span class="line">    System.out.println(&quot;-----树的非递归前序遍历&quot;);</span><br><span class="line">        iterativePre(createTree(test,0));</span><br><span class="line">        System.out.println();</span><br><span class="line">    System.out.println(&quot;-----树的非递归中序遍历&quot;);</span><br><span class="line">    iterativeIn(createTree(test,0));</span><br><span class="line">    System.out.println();</span><br><span class="line">    System.out.println(&quot;-----树的非递归后序遍历&quot;);</span><br><span class="line">    iterativeAfter(createTree(test,0));</span><br><span class="line">    System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/08/15/二叉树遍历/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -295,7 +286,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 分钟 读完 (大约 1531 个字)
+                    10 分钟 读完 (大约 1530 个字)
                 </span>
                 
                 
@@ -313,7 +304,7 @@
 <p>Java是允许多线程并发控制的，一般在系统中，如果多个线程在操作某一共享资源变量，比如说在进行数据库的操作时，那么就有可能会引起数据脏读。那么加入锁机制就可以保证某一线程在操作时不会发生冲突，确保了数据的一致性和准确性。</p>
 </blockquote>
 <h5 id="2-Java线程同步的方式有哪些？"><a href="#2-Java线程同步的方式有哪些？" class="headerlink" title="2.Java线程同步的方式有哪些？"></a>2.Java线程同步的方式有哪些？</h5><blockquote>
-<p>同步的方式有同步方法，用synchronized关键字修饰的方法。<br>同步代码块，用synchronized关键字修饰的代码块。<br>使用特殊性变量（volatile）实现线程同步。<br>使用Lock（一般指reentranLock）实现线程同步。<br>提供线程内的局部变量实现线程同步，也就是用ThreadLoacl管理变量，ThreadLocal是通过为每个线程使用的该变量提供一个变量副本，副本之间是相互独立的，所以这样每个线程就可以通过操作自己的副本变量而不会影响到其他线程。<br>==这里可以小小的总结一下，就是以上synchronized和reentranLock是通过时间换空间的方法来实现同步的，而ThreadLocal则是通过空间换时间的方式来进行同步的。 #F44336==</p>
+<p>同步的方式有同步方法，用synchronized关键字修饰的方法。<br>同步代码块，用synchronized关键字修饰的代码块。<br>使用特殊性变量（volatile）实现线程同步。<br>使用Lock（一般指reentranLock）实现线程同步。<br>提供线程内的局部变量实现线程同步，也就是用ThreadLoacl管理变量，ThreadLocal是通过为每个线程使用的该变量提供一个变量副本，副本之间是相互独立的，所以这样每个线程就可以通过操作自己的副本变量而不会影响到其他线程。<br>==这里可以小小的总结一下，就是以上synchronized和reentranLock是通过时间换空间的方法来实现同步的，而ThreadLocal则是通过空间换时间的方式来进行同步的。 </p>
 </blockquote>
         </div>
         
