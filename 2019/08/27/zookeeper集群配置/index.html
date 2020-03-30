@@ -7,21 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: 数据结构 - stayrunning</title>
+<title>dubbo学习 - stayrunning</title>
 
 
-    <meta name="description" content="我的学习记录...">
-<meta name="keywords" content="编程 学习 记录 分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="stayrunning">
-<meta property="og:url" content="http://yoursite.com/tags/数据结构/index.html">
+    <meta name="description" content="1.解压zookeeper3.5.5 2.现在一台节点上配置 ​    进入conf目录 ​    配置zoo.cfg文件 ​    修改dataDir ​    后面追加 server.1=itcast05:2888:3888     server.2=itcast06:2888:3888     server.3=itcast07:2888:3888">
+<meta name="keywords" content="分布式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dubbo学习">
+<meta property="og:url" content="http://yoursite.com/2019/08/27/zookeeper集群配置/index.html">
 <meta property="og:site_name" content="stayrunning">
-<meta property="og:description" content="我的学习记录...">
+<meta property="og:description" content="1.解压zookeeper3.5.5 2.现在一台节点上配置 ​    进入conf目录 ​    配置zoo.cfg文件 ​    修改dataDir ​    后面追加 server.1=itcast05:2888:3888     server.2=itcast06:2888:3888     server.3=itcast07:2888:3888">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-30T15:04:25.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="stayrunning">
-<meta name="twitter:description" content="我的学习记录...">
+<meta name="twitter:title" content="dubbo学习">
+<meta name="twitter:description" content="1.解压zookeeper3.5.5 2.现在一台节点上配置 ​    进入conf目录 ​    配置zoo.cfg文件 ​    修改dataDir ​    后面追加 server.1=itcast05:2888:3888     server.2=itcast06:2888:3888     server.3=itcast07:2888:3888">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -80,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="stayrunning" height="28">
+                <img src="/images/logo.svg" alt="dubbo学习" height="28">
             
             </a>
         </div>
@@ -129,31 +130,20 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">数据结构</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-15T14:41:10.000Z">2019-08-15</time>
+                <time class="level-item has-text-grey" datetime="2019-08-27T14:31:29.000Z">2019-08-27</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 436 个字)
+                    几秒 读完 (大约 40 个字)
                 </span>
                 
                 
@@ -162,21 +152,30 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/15/二叉树遍历/">二叉树遍历</a>
+                dubbo学习
             
         </h1>
         <div class="content">
-            <h6 id="1-创建节点"><a href="#1-创建节点" class="headerlink" title="1.创建节点"></a>1.创建节点</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//节点</span><br><span class="line">    static class Node&#123;</span><br><span class="line">        public int var;</span><br><span class="line">        public Node left;</span><br><span class="line">        public Node right;</span><br><span class="line"></span><br><span class="line">        public Node(int var)&#123;</span><br><span class="line">            this.var = var;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+            <p>1.解压zookeeper3.5.5</p>
+<p>2.现在一台节点上配置</p>
+<p>​    进入conf目录</p>
+<p>​    配置zoo.cfg文件</p>
+<p>​    修改dataDir</p>
+<p>​    后面追加</p>
+<pre><code>server.1=itcast05:2888:3888
+    server.2=itcast06:2888:3888
+    server.3=itcast07:2888:3888</code></pre>
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/08/15/二叉树遍历/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/分布式/">分布式</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -184,9 +183,62 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/27/SpringMVC执行流程/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">SpringMVC执行流程</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/26/zookeeper学习/">
+                <span class="level-item">zookeeper学习</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -819,7 +871,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="stayrunning" height="28">
+                    <img src="/images/logo.svg" alt="dubbo学习" height="28">
                 
                 </a>
                 <p class="is-size-7">

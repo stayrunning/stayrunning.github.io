@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 分钟 读完 (大约 1240 个字)
+                    8 分钟 读完 (大约 1241 个字)
                 </span>
                 
                 
@@ -168,37 +168,16 @@
         <div class="content">
             <h6 id="什么是dubbo？"><a href="#什么是dubbo？" class="headerlink" title="什么是dubbo？"></a>什么是dubbo？</h6><p>一个RPC框架。</p>
 <h6 id="什么是RPC框架？"><a href="#什么是RPC框架？" class="headerlink" title="什么是RPC框架？"></a>什么是RPC框架？</h6><p>RPC：远程过程调用协议。</p>
-<h6 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h6><p>我们有服务提供方和服务消费方。造个场景，比如说在分布式系统的架构中，那么服务A想用服务B中的一个功能，这个时候服务A和B是部署在不同的服务器上的，那么怎么调用呢？首先我们先序列化请求对象A，然后进行一个请求通信对象，怎么进行请求通信对象呢？我们会进行一个协议编码，然后通过流的方式传输给服务器B，服务器B再进行一个协议解码获得通信请求对象，然后再反序列化，反序列化后，进行一个反射调用进行业务操作，响应我们的请求对象，最后再通过序列化和协议编码的方式传输回服务消费方。</p>
-<h6 id="调用过程"><a href="#调用过程" class="headerlink" title="调用过程"></a>调用过程</h6><p>1.建立通信</p>
-<p>A要调用B，首先要建立TCP连接，远程过程调用所有的交换数据都是在这个连接里传输。连接可以是按需连接（调用结束就断掉），也可以是长连接，多个远程过程调用共享同一个连接。</p>
-<p>2.服务寻址</p>
-<p>意思就是说，A服务器上的应用怎么告诉底层RPC框架，如何连接到B服务器上特定的端口以及方法名称是什么。一般来说，我们需要提供B服务器上方法的名称以及调用的参数等信息，才能完成一次完整的服务调用。</p>
-<p>比较靠谱的的寻址方式，比如用redis或者zookeeper来注册服务等等。    </p>
-<p>3.网络传输</p>
-<p>3.1 序列化</p>
-<p>当A机器上的一个应用发起一个RPC调用时，调用方法和入参信息需要通过底层的网络协议比如TCP传输到B机器，由于网络协议是基于二进制的，所以我们需要将传输的数据先进行序列化才能在网络中进行传输。</p>
-<p>3.2 反序列化</p>
-<p>当B机器接收到A机器的应用发来的请求之后，又需要对接收到的参数等信息进行反序列化操作，即将二进制信息恢复为内存中的表达方式，然后再找到对应的方法（寻址的一部分）进行本地调用（一般是通过生成代理Proxy去调用,通常会有JDK动态代理、CGLIB动态代理、Javassist生成字节码技术等），之后得到调用的返回值。</p>
-<p>4.服务调用</p>
-<p>B机器进行本地调用（通过代理Proxy和反射调用）之后得到了返回值，此时还得将返回值发送会A机器。所以还要将返回值进行序列化，寻址服务，网络传输再发送回A服务器上。A服务器再进行一个相应的操作，这样一个完成的RPC调用才算完成。</p>
-<h6 id="RPC架构组件"><a href="#RPC架构组件" class="headerlink" title="RPC架构组件"></a>RPC架构组件</h6><p>一般包含四部分：</p>
-<p>客户端：服务调用方。</p>
-<p>客户端存根：存放服务端地址信息，将客户端的请求参数数据打包成网络消息，再通过网络传输发送给服务端。</p>
-<p>服务端：服务提供方。</p>
-<p>服务端存根：接收客户端发送过来的请求消息并进行解包，然后调用本地服务进行处理。</p>
-<h6 id="——————————"><a href="#——————————" class="headerlink" title="——————————-"></a>——————————-</h6><p>1、服务消费者（client客户端）通过本地调用的方式调用服务；</p>
-<p>2、客户端存根（client stub）接收到调用请求后负责将方法、入参等信息序列化（组装）成能够进行网络传输的消息体；</p>
-<p>3、客户端存根（client stub）找到远程的服务地址，并且将消息通过网络发送给服务端；</p>
-<p>4、服务端存根（server stub）收到消息后进行解码（反序列化操作）；</p>
-<p>5、服务端存根（server stub）根据解码结果调用本地的服务进行相关处理；</p>
-<p>6、本地服务执行具体业务逻辑并将处理结果返回给服务端存根（server stub）；</p>
-<p>7、服务端存根（server stub）将返回结果重新打包成消息（序列化）并通过网络发送至消费方；</p>
-<p>8、客户端存根（client stub）接收到消息，并进行解码（反序列化）；</p>
-<p>9、服务消费方得到最终结果；</p>
-<p>—-待补—-</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/09/30/dubbo学习小结/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -293,6 +272,99 @@
                 </div>
             </div>
         </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-27T14:31:29.000Z">2019-08-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 40 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/27/zookeeper集群配置/">dubbo学习</a>
+            
+        </h1>
+        <div class="content">
+            <p>1.解压zookeeper3.5.5</p>
+<p>2.现在一台节点上配置</p>
+<p>​    进入conf目录</p>
+<p>​    配置zoo.cfg文件</p>
+<p>​    修改dataDir</p>
+<p>​    后面追加</p>
+<pre><code>server.1=itcast05:2888:3888
+    server.2=itcast06:2888:3888
+    server.3=itcast07:2888:3888</code></pre>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-26T13:41:22.000Z">2019-08-26</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    几秒 读完 (大约 75 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/26/zookeeper学习/">zookeeper学习</a>
+            
+        </h1>
+        <div class="content">
+            <p>zookeeper的学习应该来说是很有趣的，因为从开始了解分布式，然后慢慢的一层层揭开的感觉还是很美好的。</p>
+<p>so,什么是zookeeper？</p>
+<p>Zookeeper 主要就是文件系统+监听机制，由两个特性进行管理。</p>
+
+        </div>
+        
         
         
     </div>
@@ -481,7 +553,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/JVM-总结-面经/" style="font-size: 10px;">JVM,总结,面经</a> <a href="/tags/SpringMVC/" style="font-size: 10px;">SpringMVC</a> <a href="/tags/分布式/" style="font-size: 20px;">分布式</a> <a href="/tags/多线程-总结/" style="font-size: 10px;">多线程,总结</a> <a href="/tags/实习/" style="font-size: 10px;">实习</a> <a href="/tags/恋爱/" style="font-size: 10px;">恋爱</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
+        <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/SpringMVC/" style="font-size: 10px;">SpringMVC</a> <a href="/tags/分布式/" style="font-size: 20px;">分布式</a> <a href="/tags/多线程-总结/" style="font-size: 10px;">多线程,总结</a> <a href="/tags/实习/" style="font-size: 10px;">实习</a> <a href="/tags/恋爱/" style="font-size: 10px;">恋爱</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
     
@@ -496,25 +568,6 @@
         
         <article class="media">
             
-            <a href="/2020/03/30/zookeeper集群配置/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-30T14:51:51.968Z">2020-03-30</time></div>
-                    <a href="/2020/03/30/zookeeper集群配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2020/03/23/Linux常用指令学习/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="">
@@ -525,44 +578,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-22T17:03:17.246Z">2020-03-23</time></div>
                     <a href="/2020/03/23/Linux常用指令学习/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/23/zookeeper学习/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-22T17:02:02.287Z">2020-03-23</time></div>
-                    <a href="/2020/03/23/zookeeper学习/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/22/JVM相关知识总结/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-8-19JVM面经">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-22T07:30:41.785Z">2020-03-22</time></div>
-                    <a href="/2020/03/22/JVM相关知识总结/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019-8-19JVM面经</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -589,6 +604,63 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/09/18/到底什么是2pc&3pc？paxos算法又是什么？/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2PC &amp; 3PC">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T11:31:20.000Z">2019-09-18</time></div>
+                    <a href="/2019/09/18/到底什么是2pc&3pc？paxos算法又是什么？/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2PC &amp; 3PC</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/17/分布式理论相关知识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="初识分布式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-17T15:36:22.000Z">2019-09-17</time></div>
+                    <a href="/2019/09/17/分布式理论相关知识/" class="title has-link-black-ter is-size-6 has-text-weight-normal">初识分布式</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/15/实习阶段总结/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="实习阶段总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-15T14:41:10.000Z">2019-09-15</time></div>
+                    <a href="/2019/09/15/实习阶段总结/" class="title has-link-black-ter is-size-6 has-text-weight-normal">实习阶段总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
         
@@ -606,7 +678,7 @@
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -628,7 +700,7 @@
                     <span class="level-item">八月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -647,8 +719,8 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/JVM-总结-面经/">
-                        <span class="tag">JVM,总结,面经</span>
+                    <a class="tags has-addons" href="/tags/JVM/">
+                        <span class="tag">JVM</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -663,7 +735,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/分布式/">
                         <span class="tag">分布式</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -719,25 +791,6 @@
         
         <article class="media">
             
-            <a href="/2020/03/30/zookeeper集群配置/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-30T14:51:51.968Z">2020-03-30</time></div>
-                    <a href="/2020/03/30/zookeeper集群配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2020/03/23/Linux常用指令学习/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="">
@@ -748,44 +801,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-22T17:03:17.246Z">2020-03-23</time></div>
                     <a href="/2020/03/23/Linux常用指令学习/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/23/zookeeper学习/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-22T17:02:02.287Z">2020-03-23</time></div>
-                    <a href="/2020/03/23/zookeeper学习/" class="title has-link-black-ter is-size-6 has-text-weight-normal"></a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/03/22/JVM相关知识总结/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019-8-19JVM面经">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-22T07:30:41.785Z">2020-03-22</time></div>
-                    <a href="/2020/03/22/JVM相关知识总结/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019-8-19JVM面经</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -812,6 +827,63 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/09/18/到底什么是2pc&3pc？paxos算法又是什么？/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2PC &amp; 3PC">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T11:31:20.000Z">2019-09-18</time></div>
+                    <a href="/2019/09/18/到底什么是2pc&3pc？paxos算法又是什么？/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2PC &amp; 3PC</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/17/分布式理论相关知识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="初识分布式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-17T15:36:22.000Z">2019-09-17</time></div>
+                    <a href="/2019/09/17/分布式理论相关知识/" class="title has-link-black-ter is-size-6 has-text-weight-normal">初识分布式</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/15/实习阶段总结/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="实习阶段总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-15T14:41:10.000Z">2019-09-15</time></div>
+                    <a href="/2019/09/15/实习阶段总结/" class="title has-link-black-ter is-size-6 has-text-weight-normal">实习阶段总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -829,7 +901,7 @@
                     <span class="level-item">三月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -851,7 +923,7 @@
                     <span class="level-item">八月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -870,8 +942,8 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/JVM-总结-面经/">
-                        <span class="tag">JVM,总结,面经</span>
+                    <a class="tags has-addons" href="/tags/JVM/">
+                        <span class="tag">JVM</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -886,7 +958,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/分布式/">
                         <span class="tag">分布式</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 

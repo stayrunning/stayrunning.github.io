@@ -7,14 +7,14 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: 数据结构 - stayrunning</title>
+<title>标签: JVM - stayrunning</title>
 
 
     <meta name="description" content="我的学习记录...">
 <meta name="keywords" content="编程 学习 记录 分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="stayrunning">
-<meta property="og:url" content="http://yoursite.com/tags/数据结构/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/JVM/index.html">
 <meta property="og:site_name" content="stayrunning">
 <meta property="og:description" content="我的学习记录...">
 <meta property="og:locale" content="zh-CN">
@@ -134,7 +134,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">数据结构</a></li>
+            <li class="is-active"><a href="#" aria-current="page">JVM</a></li>
         </ul>
         </nav>
     </div>
@@ -147,13 +147,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-15T14:41:10.000Z">2019-08-15</time>
+                <time class="level-item has-text-grey" datetime="2019-08-29T14:43:22.000Z">2019-08-29</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 436 个字)
+                    28 分钟 读完 (大约 4129 个字)
                 </span>
                 
                 
@@ -162,18 +162,18 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/15/二叉树遍历/">二叉树遍历</a>
+                <a class="has-link-black-ter" href="/2019/08/29/JVM相关知识总结/">Java虚拟机学习</a>
             
         </h1>
         <div class="content">
-            <h6 id="1-创建节点"><a href="#1-创建节点" class="headerlink" title="1.创建节点"></a>1.创建节点</h6><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//节点</span><br><span class="line">    static class Node&#123;</span><br><span class="line">        public int var;</span><br><span class="line">        public Node left;</span><br><span class="line">        public Node right;</span><br><span class="line"></span><br><span class="line">        public Node(int var)&#123;</span><br><span class="line">            this.var = var;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+            <h6 id="1-简述jvm的内存布局"><a href="#1-简述jvm的内存布局" class="headerlink" title="1.简述jvm的内存布局"></a>1.简述jvm的内存布局</h6><p>jvm的内存布局分为5块：程序计数器，虚拟机栈，本地方法栈。堆，方法区。<br>程序计数器：<br>可以看做是当前线程所执行的字节码的行号指示器。字节码解释器工作时通过改变这个计数器的值来选取下一条需要执行的字节码指令，比如，分支、循环、跳转、异常处理，线程恢复等基本功能都要依赖于这个计数器来完成。</p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/08/15/二叉树遍历/#more">阅读更多</a>
+                <a class="button is-size-7 is-light" href="/2019/08/29/JVM相关知识总结/#more">阅读更多</a>
                 </div>
             </div>
         </div>
