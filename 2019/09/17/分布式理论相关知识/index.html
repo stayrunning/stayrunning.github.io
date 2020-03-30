@@ -7,21 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: 恋爱 - stayrunning</title>
+<title>初识分布式 - stayrunning</title>
 
 
-    <meta name="description" content="我的学习记录...">
-<meta name="keywords" content="编程 学习 记录 分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="stayrunning">
-<meta property="og:url" content="http://yoursite.com/tags/恋爱/index.html">
+    <meta name="description" content="为什么我们需要分布式架构？随着应用规模的迅速扩张，单台机器的部署已经难以支撑用户大规模、高并发的请求了， 因此服务化、集群化、分布式概念应运而生。 分布式系统常见的问题总结起来，分布式系统中最常出现的问题是：通信异常，表现为网络通信成功，失败和超时；节点故障，包括宕机和OOM。 以上所讲的问题之所以会出现是因为我们的服务是部署在不同的服务器上的。那么我们应该怎样设计才能符合一个比较好的分布式系统架">
+<meta name="keywords" content="分布式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识分布式">
+<meta property="og:url" content="http://yoursite.com/2019/09/17/分布式理论相关知识/index.html">
 <meta property="og:site_name" content="stayrunning">
-<meta property="og:description" content="我的学习记录...">
+<meta property="og:description" content="为什么我们需要分布式架构？随着应用规模的迅速扩张，单台机器的部署已经难以支撑用户大规模、高并发的请求了， 因此服务化、集群化、分布式概念应运而生。 分布式系统常见的问题总结起来，分布式系统中最常出现的问题是：通信异常，表现为网络通信成功，失败和超时；节点故障，包括宕机和OOM。 以上所讲的问题之所以会出现是因为我们的服务是部署在不同的服务器上的。那么我们应该怎样设计才能符合一个比较好的分布式系统架">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2020-03-30T14:48:29.550Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="stayrunning">
-<meta name="twitter:description" content="我的学习记录...">
+<meta name="twitter:title" content="初识分布式">
+<meta name="twitter:description" content="为什么我们需要分布式架构？随着应用规模的迅速扩张，单台机器的部署已经难以支撑用户大规模、高并发的请求了， 因此服务化、集群化、分布式概念应运而生。 分布式系统常见的问题总结起来，分布式系统中最常出现的问题是：通信异常，表现为网络通信成功，失败和超时；节点故障，包括宕机和OOM。 以上所讲的问题之所以会出现是因为我们的服务是部署在不同的服务器上的。那么我们应该怎样设计才能符合一个比较好的分布式系统架">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -80,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="stayrunning" height="28">
+                <img src="/images/logo.svg" alt="初识分布式" height="28">
             
             </a>
         </div>
@@ -129,31 +130,20 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">恋爱</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-31T13:32:10.000Z">2019-08-31</time>
+                <time class="level-item has-text-grey" datetime="2019-09-17T15:36:22.000Z">2019-09-17</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 178 个字)
+                    8 分钟 读完 (大约 1260 个字)
                 </span>
                 
                 
@@ -162,14 +152,42 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/31/hey,csy/">love and company</a>
+                初识分布式
             
         </h1>
         <div class="content">
-            <h5 id="《我曾七次鄙视我的灵魂》-——纪伯伦"><a href="#《我曾七次鄙视我的灵魂》-——纪伯伦" class="headerlink" title="《我曾七次鄙视我的灵魂》 ——纪伯伦"></a>《我曾七次鄙视我的灵魂》 ——纪伯伦</h5><blockquote>
-<p>第一次，当它本可进取时，却故作谦卑；<br>第二次，当它在空虚时，用爱欲来填充；<br>第三次，在困难和容易之间，它选择了容易；<br>第四次，它犯了错，却借由别人也会犯错来宽慰自己；<br>第五次，它自由软弱，却把它认为是生命的坚韧；<br>第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；<br>第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。</p>
-</blockquote>
+            <h6 id="为什么我们需要分布式架构？"><a href="#为什么我们需要分布式架构？" class="headerlink" title="为什么我们需要分布式架构？"></a>为什么我们需要分布式架构？</h6><p>随着应用规模的迅速扩张，单台机器的部署已经难以支撑用户大规模、高并发的请求了， 因此服务化、集群化、分布式概念应运而生。</p>
+<h6 id="分布式系统常见的问题"><a href="#分布式系统常见的问题" class="headerlink" title="分布式系统常见的问题"></a>分布式系统常见的问题</h6><p>总结起来，分布式系统中最常出现的问题是：通信异常，表现为网络通信成功，失败和超时；节点故障，包括宕机和OOM。</p>
+<p>以上所讲的问题之所以会出现是因为我们的服务是部署在不同的服务器上的。那么我们应该怎样设计才能符合一个比较好的分布式系统架构呢？先来看下什么是CAP理论。</p>
+<a id="more"></a>
 
+<h6 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h6><p>指的是在一个分布式系统中，同时不能满足一致性（consistency）、可用性（availability）、分区容错性（partition tolerance）这三个基本需求，最多只能满足其中的两个。下面解释一下这三个名词的意思：</p>
+<ul>
+<li>一致性：指的就是数据的准确性。数据在多个副本中是否能够保存一致的特性。并在当数据在执行完更新操作后，仍然保证系统数据处于一致的状态。</li>
+<li>可用性（高可用）：系统提供的服务必须是处于一直可用的状态。对于一个用户的请求必须在有限的时间内返回结果，这种体验感应该得跟单机模式下的请求是一样的。返回的结果应该是一个正常的响应结果，而不是out of memory这类系统错误信息。</li>
+<li>分区容错性（数据分片）：分布式系统在遇到任何网络分区故障的时候，仍然能提供高一致性和可用性的服务，除非是整个网络系统都出现了破坏。组成分布式系统的每个节点的加入和退出都可以看成是一个特殊的网络分区。</li>
+</ul>
+<p>那么我们上述说到一个分布式系统是无法同时满足一致性、可用性、分区容错性这三个特征。那么我们应该怎么做一个权衡呢？</p>
+<p>首先，在这三者中取两者，必须考虑的一个就是P（分区容错性），这个是不能忽略的。因为在分布式系统中，不同的服务是部署在不同的服务器上的，在子网络中，网络问题是必然出现的异常，网络通信问题是必然存在的。那么我们只能在剩下的C和A中进行权衡。我们说过了，用户的数据准确性是需要保证的，而我们的服务也是需要正常提供的。那么这就出现了一个很矛盾的问题，既要保证我们的用户体验正常又不能同时满足CAP理论，那么我们的分布式系统应该怎么来设计呢？再来看一个BASE理论。</p>
+<h6 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h6><p>指的是基本可用性、软状态、最终一致性。所以BASE理论是基于CAP理论演化而来，是对CAP理论中一致性和可用性的一种权衡的结果。</p>
+<p>核心思想：即使无法做到强一致性，但每个业务根据自身的特点，采用适当的方式来使系统达到最终一致性。</p>
+<ul>
+<li>基本可用性：指的是当系统发送故障时，允许降低用户的部分功能，保持核心功能，但是不是指说不可用。比如我们在进行一个浏览器搜索时，平时可能0.5s返回结果，现在由于故障我们可能2s才返回。网页访问过大时，部分用户提供降级服务等等。</li>
+<li>软状态：指的是系统允许存在中间状态，并且该中间状态不会影响到系统的整体可用性。即允许系统在不同节点间进行副本同步的时候存在延时。</li>
+<li>最终一致性：系统中的所有数据副本不一定保持时刻强一致性，指的是在经过一定时间后，最终能够达到一致的状态。</li>
+</ul>
+<p>BASE理论面向的是大型高可用可扩展的分布式系统，通过牺牲强一致性来获得可用性。</p>
+<p>好了，既然采用适当的方式来使系统达到最终一致性。那么这种适当的方式是什么呢？下篇继续（2pc,3pc和及paxos）</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/分布式/">分布式</a>
+                </div>
+            </div>
         </div>
         
         
@@ -179,9 +197,62 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/18/到底什么是2pc&3pc？paxos算法又是什么？/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">2PC &amp; 3PC</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/15/实习阶段总结/">
+                <span class="level-item">实习阶段总结</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -814,7 +885,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="stayrunning" height="28">
+                    <img src="/images/logo.svg" alt="初识分布式" height="28">
                 
                 </a>
                 <p class="is-size-7">
